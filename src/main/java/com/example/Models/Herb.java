@@ -12,20 +12,24 @@ public class Herb {
     private Long herbID;
     private String latinName;
     private String commonName;
-    private String dosage;
+    private String otherCommonNames;
+    private String dosageParts;
     private String description;
     private String energetics;
-    private String bodySystemsAffected;
+    private String bodySystems;
+    private String actions;
 
     public Herb(){}
 
-    public Herb(String latinName, String commonName, String dosage, String description, String energetics, String bodySystemsAffected) {
+    public Herb(String latinName, String commonName, String otherCommonNames, String dosageParts, String description, String energetics, String bodySystems, String actions) {
         this.latinName = latinName;
         this.commonName = commonName;
-        this.dosage = dosage;
+        this.otherCommonNames = otherCommonNames;
+        this.dosageParts = dosageParts;
         this.description = description;
         this.energetics = energetics;
-        this.bodySystemsAffected = bodySystemsAffected;
+        this.bodySystems = bodySystems;
+        this.actions = actions;
     }
 
     public Long getHerbID() {
@@ -52,12 +56,20 @@ public class Herb {
         this.commonName = commonName;
     }
 
-    public String getDosage() {
-        return dosage;
+    public String getOtherCommonNames() {
+        return otherCommonNames;
     }
 
-    public void setDosage(String dosage) {
-        this.dosage = dosage;
+    public void setOtherCommonNames(String otherCommonNames) {
+        this.otherCommonNames = otherCommonNames;
+    }
+
+    public String getDosageParts() {
+        return dosageParts;
+    }
+
+    public void setDosageParts(String dosage) {
+        this.dosageParts = dosage;
     }
 
     public String getDescription() {
@@ -76,12 +88,19 @@ public class Herb {
         this.energetics = energetics;
     }
 
-    public String getBodySystemsAffected() {
-        return bodySystemsAffected;
+    public String getBodySystems() {
+        return bodySystems;
     }
 
-    public void setBodySystemsAffected(String bodySystemsAffected) {
-        this.bodySystemsAffected = bodySystemsAffected;
+    public void setBodySystems(String bodySystems) {
+        this.bodySystems = bodySystems;
     }
 
+    public String getActions() {
+        return actions;
+    }
+
+    public void setActions(String actions) {
+        this.actions = actions;
+    }
 }
