@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class HerbService {
 
     @Autowired
-    HerbRepository herbRepository;
+    private HerbRepository herbRepository;
 
     public Herb postAddHerb(Herb herb){
         if (herb.getLatinName().equals(getCheckHerbExists(herb.getLatinName())))
@@ -55,10 +55,9 @@ public class HerbService {
 
     public Iterable<Herb> getIndex(){return herbRepository.findAll();}
 
-    public Herb putUpdateHerb(String originalLatinName, String newLatinName, String commonName, String otherCommonNames, String dosageParts, String description, String energetics, String bodySystems, String actions) {
-        Long id = getHerbByLatinName(originalLatinName).getHerbID();
+    public Herb putUpdateHerbById(Long id, String latinName, String commonName, String otherCommonNames, String dosageParts, String description, String energetics, String bodySystems, String actions) {
         Herb herb = getHerbById(id);
-        herb.setLatinName(newLatinName);
+        herb.setLatinName(latinName);
         herb.setCommonName(commonName);
         herb.setOtherCommonNames(otherCommonNames);
         herb.setDosageParts(dosageParts);
@@ -73,7 +72,7 @@ public class HerbService {
         return herbRepository.save(herb);
     }
 
-    public void deleteHerbById(Long id){ 
+    public void deleteHerbById(Long id){
         herbRepository.delete(getHerbById(id));
     }
 
