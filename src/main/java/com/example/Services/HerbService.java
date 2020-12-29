@@ -11,6 +11,12 @@ public class HerbService {
     @Autowired
     private HerbRepository herbRepository;
 
+    public HerbService(){}
+
+    public HerbService(HerbRepository herbRepository){
+        this.herbRepository = herbRepository;
+    }
+
     public Herb postAddHerb(Herb herb){
         if (herb.getLatinName().equals(getCheckHerbExists(herb.getLatinName())))
         { return null;
@@ -46,7 +52,7 @@ public class HerbService {
     }
 
     public Herb getHerbByBodySystemsAffected(String bodySystem){
-        return herbRepository.findHerbByBodySystemsAffected(bodySystem);
+        return herbRepository.findHerbByBodySystems(bodySystem);
     }
 
     public Herb getHerbByActions(String actions){

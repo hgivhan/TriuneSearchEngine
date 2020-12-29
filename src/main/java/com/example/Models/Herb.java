@@ -9,7 +9,7 @@ public class Herb {
     @Id
     @GeneratedValue (strategy= GenerationType.IDENTITY)
 
-    private Long herbID;
+    private Long id;
     private String latinName;
     private String commonName;
     private String otherCommonNames;
@@ -32,12 +32,12 @@ public class Herb {
         this.actions = actions;
     }
 
-    public Long getHerbID() {
-        return herbID;
+    public Long getHerbId() {
+        return id;
     }
 
-    public void setHerbID(Long herbID) {
-        this.herbID = herbID;
+    public void setHerbId(Long iD) {
+        this.id = iD;
     }
 
     public String getLatinName() {

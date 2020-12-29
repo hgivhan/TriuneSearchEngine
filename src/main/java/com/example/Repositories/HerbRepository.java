@@ -12,7 +12,7 @@ public interface HerbRepository extends CrudRepository<Herb, Long> {
     Herb findHerbByCommonName(String commonName);
     Herb findHerbByDosageParts(String dosageParts);
     Herb findHerbByEnergetics(String energetics);
-    Herb findHerbByBodySystemsAffected(String bodySystem);
+    Herb findHerbByBodySystems(String bodySystem);
     Herb findHerbByActions(String actions);
 
 
