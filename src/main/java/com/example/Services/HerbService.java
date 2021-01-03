@@ -1,21 +1,17 @@
 package com.example.Services;
 
-import com.example.Models.Herb;
+import com.example.Models.*;
 import com.example.Repositories.HerbRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class HerbService {
 
     @Autowired
     private HerbRepository herbRepository;
-
-    public HerbService(){}
-
-    public HerbService(HerbRepository herbRepository){
-        this.herbRepository = herbRepository;
-    }
 
     public Herb postAddHerb(Herb herb){
         if (herb.getLatinName().equals(getCheckHerbExists(herb.getLatinName())))
@@ -44,7 +40,7 @@ public class HerbService {
     }
 
     public Herb getHerbByDosageParts(String dosageParts){
-        return herbRepository.findHerbByDosageParts(dosageParts);
+        return herbRepository.findHerbByDosage(dosageParts);
     }
 
     public Herb getHerbByEnergetics(String energetics){
@@ -52,25 +48,24 @@ public class HerbService {
     }
 
     public Herb getHerbByBodySystemsAffected(String bodySystem){
-        return herbRepository.findHerbByBodySystems(bodySystem);
+        return herbRepository.findHerbByBodySystem(bodySystem);
     }
 
     public Herb getHerbByActions(String actions){
-        return herbRepository.findHerbByActions(actions);
+        return herbRepository.findHerbByAction(actions);
     }
 
     public Iterable<Herb> getIndex(){return herbRepository.findAll();}
 
-    public Herb putUpdateHerbById(Long id, String latinName, String commonName, String otherCommonNames, String dosageParts, String description, String energetics, String bodySystems, String actions) {
+    public Herb putUpdateHerbById(Long id, String latinName, String commonName, String description, List<OtherNames> otherNames, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
         Herb herb = getHerbById(id);
         herb.setLatinName(latinName);
         herb.setCommonName(commonName);
-        herb.setOtherCommonNames(otherCommonNames);
-        herb.setDosageParts(dosageParts);
-        herb.setDosageParts(description);
+        herb.setDescription(description);
+        herb.setOtherNames(otherNames);
+        herb.setDosage(dosage);
         herb.setEnergetics(energetics);
-        herb.setBodySystems(bodySystems);
-        herb.setActions(actions);
+        herb.setEffects(effects);;
 
         if (herb.getLatinName().equals(getCheckHerbExists(herb.getLatinName()))) {
             return null;
