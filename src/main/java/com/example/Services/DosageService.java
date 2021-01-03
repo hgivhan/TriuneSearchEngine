@@ -22,7 +22,7 @@ public class DosageService {
         if(dosageRepository.findByDosage(dosage) != null){
             return dosage;
         }
-        return "This herb is not in the directory yet.";
+        return "This item is not in the directory yet.";
     }
 
     public Iterable<Dosage> dosageIndex(){return dosageRepository.findAll();}
