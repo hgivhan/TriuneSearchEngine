@@ -7,13 +7,13 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface HerbRepository extends CrudRepository<Herb, Long> {
 
-    Herb findHerbById(Long id);
+    Herb findHerbById(Long herbId);
     Herb findHerbByLatinName(String latinName);
     Herb findHerbByCommonName(String commonName);
-    Herb findHerbByDosageParts(String dosageParts);
+    Herb findHerbByDosage(String dosage);
     Herb findHerbByEnergetics(String energetics);
-    Herb findHerbByBodySystems(String bodySystem);
-    Herb findHerbByActions(String actions);
+    Herb findHerbByBodySystem(String bodySystem);
+    Herb findHerbByAction(String action);
 
 
 

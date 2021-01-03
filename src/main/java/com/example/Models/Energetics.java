@@ -13,6 +13,8 @@ public class Energetics {
     private Long energeticsId;
     private String energetics;
 
+    public Energetics(){}
+
     public Energetics(String energetics) {
         this.energetics = energetics;
     }

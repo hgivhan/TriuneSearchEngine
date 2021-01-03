@@ -12,6 +12,8 @@ public class Dosage {
     private Long dosageID;
     private String dosage;
 
+    public Dosage(){}
+
     public Dosage(String dosage) {
         this.dosage = dosage;
     }

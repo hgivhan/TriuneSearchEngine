@@ -12,6 +12,8 @@ public class OtherNames {
     private Long otherNameId;
     String otherName;
 
+    public OtherNames(){}
+
     public OtherNames(String otherName) {
         this.otherName = otherName;
     }

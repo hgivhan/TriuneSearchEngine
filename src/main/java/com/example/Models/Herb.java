@@ -14,21 +14,28 @@ public class Herb {
     private String latinName;
     private String commonName;
     private String description;
-    private List<OtherNames> otherNamesId;
-    private List<Dosage> dosageId;
-    private List<Energetics> energeticsId;
-    private List<Effects> effectsId;
+
+    @OneToMany (targetEntity = OtherNames.class)
+    private List<OtherNames> otherNames;
+
+    @OneToMany (targetEntity = Dosage.class)
+    private List<Dosage> dosage;
+
+    @OneToMany (targetEntity = Energetics.class)
+    private List<Energetics> energetics;
+
+    private List<Effects> effects;
 
     public Herb(){}
 
-    public Herb(String latinName, String commonName, String description, List<OtherNames> otherNamesId, List<Dosage> dosageId, List<Energetics> energeticsId, List<Effects> effectsId) {
+    public Herb(String latinName, String commonName, String description, List<OtherNames> otherNames, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
         this.latinName = latinName;
         this.commonName = commonName;
         this.description = description;
-        this.otherNamesId = otherNamesId;
-        this.dosageId = dosageId;
-        this.energeticsId = energeticsId;
-        this.effectsId = effectsId;
+        this.otherNames = otherNames;
+        this.dosage = dosage;
+        this.energetics = energetics;
+        this.effects = effects;
     }
 
     public Long getHerbId() {
@@ -63,31 +70,31 @@ public class Herb {
         this.description = description;
     }
 
-    public List<OtherNames> getOtherNamesId() {
-        return otherNamesId;
+    public List<OtherNames> getOtherNames() {
+        return otherNames;
     }
 
-    public void setOtherNamesId(List<OtherNames> otherNames) {
-        this.otherNamesId = otherNames;
+    public void setOtherNames(List<OtherNames> otherNames) {
+        this.otherNames = otherNames;
     }
 
-    public List<Dosage> getDosageId() {
-        return dosageId;
+    public List<Dosage> getDosage() {
+        return dosage;
     }
 
-    public void setDosageId(List<Dosage> dosage) { this.dosageId = dosage; }
+    public void setDosage(List<Dosage> dosage) { this.dosage = dosage; }
 
-    public List<Energetics> getEnergeticsId() {
-        return energeticsId;
+    public List<Energetics> getEnergetics() {
+        return energetics;
     }
 
-    public void setEnergeticsId(List<Energetics> energetics) {
-        this.energeticsId = energetics;
+    public void setEnergetics(List<Energetics> energetics) {
+        this.energetics = energetics;
     }
 
-    public List<Effects> getEffectsId() { return effectsId; }
+    public List<Effects> getEffects() { return effects; }
 
-    public void setEffectsId(List<Effects> effects) {
-        this.effectsId = effects;
+    public void setEffects(List<Effects> effects) {
+        this.effects = effects;
     }
 }

@@ -12,6 +12,8 @@ public class Effects {
     private String bodySystem;
     private String action;
 
+    public Effects(){}
+
     public Effects(String bodySystem, String action) {
         this.bodySystem = bodySystem;
         this.action = action;
