@@ -65,10 +65,10 @@ public class HerbService {
         Herb herb = getHerbById(id);
         herb.setLatinName(latinName);
         herb.setCommonName(commonName);
-        herb.setOtherCommonNames(otherCommonNames);
-        herb.setDosageParts(dosageParts);
-        herb.setDosageParts(description);
-        herb.setEnergetics(energetics);
+        herb.setOtherNamesId(otherCommonNames);
+        herb.setDosageId(dosageParts);
+        herb.setDosageId(description);
+        herb.setEnergeticsId(energetics);
         herb.setBodySystems(bodySystems);
         herb.setActions(actions);
 

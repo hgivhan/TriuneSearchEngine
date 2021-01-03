@@ -1,6 +1,7 @@
 package com.example.Models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -9,35 +10,33 @@ public class Herb {
     @Id
     @GeneratedValue (strategy= GenerationType.IDENTITY)
 
-    private Long id;
+    private Long herbId;
     private String latinName;
     private String commonName;
-    private String otherCommonNames;
-    private String dosageParts;
     private String description;
-    private String energetics;
-    private String bodySystems;
-    private String actions;
+    private List<OtherNames> otherNamesId;
+    private List<Dosage> dosageId;
+    private List<Energetics> energeticsId;
+    private List<Effects> effectsId;
 
     public Herb(){}
 
-    public Herb(String latinName, String commonName, String otherCommonNames, String dosageParts, String description, String energetics, String bodySystems, String actions) {
+    public Herb(String latinName, String commonName, String description, List<OtherNames> otherNamesId, List<Dosage> dosageId, List<Energetics> energeticsId, List<Effects> effectsId) {
         this.latinName = latinName;
         this.commonName = commonName;
-        this.otherCommonNames = otherCommonNames;
-        this.dosageParts = dosageParts;
         this.description = description;
-        this.energetics = energetics;
-        this.bodySystems = bodySystems;
-        this.actions = actions;
+        this.otherNamesId = otherNamesId;
+        this.dosageId = dosageId;
+        this.energeticsId = energeticsId;
+        this.effectsId = effectsId;
     }
 
     public Long getHerbId() {
-        return id;
+        return herbId;
     }
 
-    public void setHerbId(Long iD) {
-        this.id = iD;
+    public void setHerbId(Long herbId) {
+        this.herbId = herbId;
     }
 
     public String getLatinName() {
@@ -56,22 +55,6 @@ public class Herb {
         this.commonName = commonName;
     }
 
-    public String getOtherCommonNames() {
-        return otherCommonNames;
-    }
-
-    public void setOtherCommonNames(String otherCommonNames) {
-        this.otherCommonNames = otherCommonNames;
-    }
-
-    public String getDosageParts() {
-        return dosageParts;
-    }
-
-    public void setDosageParts(String dosage) {
-        this.dosageParts = dosage;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -80,27 +63,31 @@ public class Herb {
         this.description = description;
     }
 
-    public String getEnergetics() {
-        return energetics;
+    public List<OtherNames> getOtherNamesId() {
+        return otherNamesId;
     }
 
-    public void setEnergetics(String energetics) {
-        this.energetics = energetics;
+    public void setOtherNamesId(List<OtherNames> otherNames) {
+        this.otherNamesId = otherNames;
     }
 
-    public String getBodySystems() {
-        return bodySystems;
+    public List<Dosage> getDosageId() {
+        return dosageId;
     }
 
-    public void setBodySystems(String bodySystems) {
-        this.bodySystems = bodySystems;
+    public void setDosageId(List<Dosage> dosage) { this.dosageId = dosage; }
+
+    public List<Energetics> getEnergeticsId() {
+        return energeticsId;
     }
 
-    public String getActions() {
-        return actions;
+    public void setEnergeticsId(List<Energetics> energetics) {
+        this.energeticsId = energetics;
     }
 
-    public void setActions(String actions) {
-        this.actions = actions;
+    public List<Effects> getEffectsId() { return effectsId; }
+
+    public void setEffectsId(List<Effects> effects) {
+        this.effectsId = effects;
     }
 }

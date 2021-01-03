@@ -5,7 +5,6 @@ import com.example.Services.HerbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -50,7 +49,7 @@ public class HerbController {
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Herb> updateHerb(@RequestBody Herb herb, @PathVariable Long id) {
-        return new ResponseEntity<>(herbService.putUpdateHerbById(id, herb.getLatinName(), herb.getCommonName(), herb.getOtherCommonNames(), herb.getDosageParts(), herb.getDescription(), herb.getEnergetics(), herb.getBodySystems(), herb.getActions()), HttpStatus.OK); }
+        return new ResponseEntity<>(herbService.putUpdateHerbById(id, herb.getLatinName(), herb.getCommonName(), herb.getOtherNamesId(), herb.getDosageId(), herb.getDescription(), herb.getEnergeticsId(), herb.getBodySystems(), herb.getActions()), HttpStatus.OK); }
 
     @DeleteMapping("/deletbyid/{id}")
     public void deleteHerbById(@PathVariable Long id){herbService.deleteHerbById(id);}

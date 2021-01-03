@@ -2,10 +2,7 @@ package com.example.ModelTests;
 
 import com.example.Models.Herb;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class HerbTest {
     Herb herb1 = new Herb("Stellaria media", "Chickweed", "Starwort", "1/6", "ChickweedDescription", "Cool, moist", "Large Intestine, Mucous Membranes", "Builder");
@@ -50,7 +47,7 @@ class HerbTest {
     @Test
     void getOtherCommonNames() {
         String expected = "Starwort";
-        String actual = herb1.getOtherCommonNames();
+        String actual = herb1.getOtherNamesId();
         Assert.assertEquals(expected,actual);
 
     }
@@ -58,22 +55,22 @@ class HerbTest {
     @Test
     void setOtherCommonNames() {
         Herb herb = new Herb();
-        herb.setOtherCommonNames("Prince's Pine");
-        Assert.assertEquals("Prince's Pine", herb.getOtherCommonNames());
+        herb.setOtherNamesId("Prince's Pine");
+        Assert.assertEquals("Prince's Pine", herb.getOtherNamesId());
     }
 
     @Test
     void getDosageParts() {
         String expected = "1/6";
-        String actual = herb1.getDosageParts();
+        String actual = herb1.getDosageId();
         Assert.assertEquals(expected,actual);
     }
 
     @Test
     void setDosageParts() {
         Herb herb = new Herb();
-        herb.setDosageParts("1/18");
-        Assert.assertEquals("1/18", herb.getDosageParts());
+        herb.setDosageId("1/18");
+        Assert.assertEquals("1/18", herb.getDosageId());
     }
 
     @Test
@@ -94,15 +91,15 @@ class HerbTest {
     @Test
     void getEnergetics() {
         String expected = "Cool, moist";
-        String actual = herb1.getEnergetics();
+        String actual = herb1.getEnergeticsId();
         Assert.assertEquals(expected,actual);
     }
 
     @Test
     void setEnergetics() {
         Herb herb = new Herb();
-        herb.setEnergetics("Hot, damp");
-        Assert.assertEquals("Hot, damp", herb.getEnergetics());
+        herb.setEnergeticsId("Hot, damp");
+        Assert.assertEquals("Hot, damp", herb.getEnergeticsId());
     }
 
     @Test
