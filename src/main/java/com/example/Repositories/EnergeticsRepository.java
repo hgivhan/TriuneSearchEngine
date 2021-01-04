@@ -6,4 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EnergeticsRepository extends CrudRepository<Energetics, Long> {
+
+    Energetics findEnergeticsById(Long energeticsId);
+    Energetics findEnergeticsByTemperature(String temperature);
+    Energetics findEnergeticsByMoisture(String moisture);
 }

@@ -24,6 +24,7 @@ public class Herb {
     @OneToMany (targetEntity = Energetics.class)
     private List<Energetics> energetics;
 
+    @OneToMany (targetEntity = Effects.class)
     private List<Effects> effects;
 
     public Herb(){}
