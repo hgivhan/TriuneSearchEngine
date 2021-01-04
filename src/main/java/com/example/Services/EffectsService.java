@@ -20,7 +20,7 @@ public class EffectsService {
     }
 
     public String getCheckEffectsExists(String effects){
-        if(effectsRepository.findByEffects(effects) != null){
+        if(effectsRepository.findEffectsByName(effects) != null){
             return effects;
         }
         return "This item is not in the directory yet.";
@@ -33,7 +33,7 @@ public class EffectsService {
     }
 
     public Effects getByEffects(String effects){
-        return effectsRepository.findByEffects(effects);
+        return effectsRepository.findEffectsByName(effects);
     }
 
     public Effects updateEffects(Long id, String effects){
