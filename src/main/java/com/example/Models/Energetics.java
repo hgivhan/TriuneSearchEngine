@@ -11,12 +11,15 @@ public class Energetics {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long energeticsId;
-    private String energetics;
+    private String temperature;
+    private String moisture;
 
-    public Energetics(){}
+    public Energetics() {
+    }
 
-    public Energetics(String energetics) {
-        this.energetics = energetics;
+    public Energetics(String temperature, String moisture) {
+        this.temperature = temperature;
+        this.moisture = moisture;
     }
 
     public Long getEnergeticsId() {
@@ -27,11 +30,19 @@ public class Energetics {
         this.energeticsId = energeticsId;
     }
 
-    public String getEnergetics() {
-        return energetics;
+    public String getTemperature() {
+        return temperature;
     }
 
-    public void setEnergetics(String energetics) {
-        this.energetics = energetics;
+    public void setTemperature(String temperature) {
+        this.temperature = temperature;
+    }
+
+    public String getMoisture() {
+        return moisture;
+    }
+
+    public void setMoisture(String moisture) {
+        this.moisture = moisture;
     }
 }

@@ -55,7 +55,7 @@ public class HerbService {
         return herbRepository.findHerbByAction(actions);
     }
 
-    public Iterable<Herb> getIndex(){return herbRepository.findAll();}
+    public Iterable<Herb> herbIndex(){return herbRepository.findAll();}
 
     public Herb putUpdateHerbById(Long id, String latinName, String commonName, String description, List<OtherNames> otherNames, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
         Herb herb = getHerbById(id);

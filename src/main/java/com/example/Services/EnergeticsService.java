@@ -12,15 +12,16 @@ public class EnergeticsService {
     EnergeticsRepository energeticsRepository;
 
     public Energetics addEnergetics(Energetics energetics){
-        if (energetics.getEnergetics().equals(getCheckEnergeticsExists(energetics.getEnergetics())))
+        if (energetics.toString().equals(getCheckEnergeticsExists(energetics)))
         { return null;
         }
         return energeticsRepository.save(energetics);
     }
 
-    public String getCheckEnergeticsExists(String energetics){
-        if(energeticsRepository.findByEnergetics(energetics) != null){
-            return energetics;
+    public String getCheckEnergeticsExists(Energetics energetics){
+        if((energeticsRepository.findEnergeticsByTemperature(energetics.getTemperature()) != null)
+            && (energeticsRepository.findEnergeticsByMoisture(energetics.getMoisture()) != null)){
+            return energetics.toString();
         }
         return "This item is not in the directory yet.";
     }
@@ -31,15 +32,20 @@ public class EnergeticsService {
         return energeticsRepository.findEnergeticsById(energeticsId);
     }
 
-    public Energetics getByEnergetics(String energetics){
-        return energeticsRepository.findByEnergetics(energetics);
+    public Energetics getEnergeticsByTemperature(String temperature){
+        return energeticsRepository.findEnergeticsByTemperature(temperature);
     }
 
-    public Energetics updateEnergetics(Long id, String energetics){
-        Energetics energetics1 = getEnergeticsById(id);
-        energetics1.setEnergetics(energetics);
+    public Energetics getEnergeticsByMoisture(String moisture){
+        return energeticsRepository.findEnergeticsByTemperature(moisture);
+    }
 
-        if (energetics1.getEnergetics().equals(getCheckEnergeticsExists(energetics1.getEnergetics())))
+    public Energetics updateEnergetics(Long id, String temperature, String moisture){
+        Energetics energetics1 = getEnergeticsById(id);
+        energetics1.setTemperature(temperature);
+        energetics1.setMoisture(moisture);
+
+        if (energetics1.toString().equals(getCheckEnergeticsExists(energetics1)))
         { return null;}
         return energeticsRepository.save(energetics1); }
 
@@ -47,8 +53,12 @@ public class EnergeticsService {
         energeticsRepository.delete(getEnergeticsById(energeticsId));
     }
 
-    public void deleteEnergeticsByName(String energetics){
-        energeticsRepository.delete(getByEnergetics(energetics));
+    public void deleteEnergeticsByTemperature(String temperature){
+        energeticsRepository.delete(getEnergeticsByTemperature(temperature));
+    }
+
+    public void deleteEnergeticsByMoisture(String moisture){
+        energeticsRepository.delete(getEnergeticsByMoisture(moisture));
     }
 }
 
