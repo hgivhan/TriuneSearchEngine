@@ -9,7 +9,7 @@ import java.util.Optional;
 @Repository
 public interface DosageRepository extends CrudRepository<Dosage, Long> {
 
-    Dosage findByDosage(String dosage);
+    Dosage findDosageByName(String dosage);
     Dosage findDosageById(Long dosageId);
 
 }

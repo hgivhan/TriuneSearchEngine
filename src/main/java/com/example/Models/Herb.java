@@ -16,15 +16,19 @@ public class Herb {
     private String description;
 
     @OneToMany (targetEntity = OtherNames.class)
-    private List<OtherNames> otherNames;
+    @JoinColumn (name = "OtherNames", referencedColumnName = "otherNameId") //name- namem of this column in the joined table, refcolumnname is the foreign key from the other table
+    private List<OtherNames> otherNames; // ^^ must match fk name in othernames table
 
     @OneToMany (targetEntity = Dosage.class)
+    @JoinColumn (name = "Dosage", referencedColumnName = "dosageId")
     private List<Dosage> dosage;
 
     @OneToMany (targetEntity = Energetics.class)
+    @JoinColumn (name = "Energetics", referencedColumnName = "energeticsId")
     private List<Energetics> energetics;
 
     @OneToMany (targetEntity = Effects.class)
+    @JoinColumn (name = "Effects", referencedColumnName = "effectsId")
     private List<Effects> effects;
 
     public Herb(){}

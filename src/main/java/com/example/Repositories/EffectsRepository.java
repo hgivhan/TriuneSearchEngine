@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EffectsRepository extends CrudRepository<Effects, Long> {
 
-    Effects findByEffects(String effects);
+    Effects findEffectsByBodySystem(String bodySystem);
+    Effects findEffectsByAction(String action);
     Effects findEffectsById(Long effectsId);
 }

@@ -13,15 +13,24 @@ public class EffectsService {
 
 
     public Effects addEffects(Effects effects){
-        if (effects.getEffects().equals(getCheckEffectsExists(effects.getEffects())))
+        if (effects.getBodySystem().equals(getCheckBodySystemExists(effects.getBodySystem()))
+        && (effects.getAction().equals(getCheckActionExists(effects.getAction())))){
         { return null;
+        }
         }
         return effectsRepository.save(effects);
     }
 
-    public String getCheckEffectsExists(String effects){
-        if(effectsRepository.findByEffects(effects) != null){
-            return effects;
+    public String getCheckBodySystemExists(String bodySystem){
+        if(effectsRepository.findEffectsByBodySystem(bodySystem) != null){
+            return bodySystem;
+        }
+        return "This item is not in the directory yet.";
+    }
+
+    public String getCheckActionExists(String action){
+        if(effectsRepository.findEffectsByAction(action) != null){
+            return action;
         }
         return "This item is not in the directory yet.";
     }
@@ -32,23 +41,25 @@ public class EffectsService {
         return effectsRepository.findEffectsById(effectsId);
     }
 
-    public Effects getByEffects(String effects){
-        return effectsRepository.findByEffects(effects);
+    public Effects getEffectsByBodySystem(String bodySystem){
+        return effectsRepository.findEffectsByBodySystem(bodySystem);
     }
 
-    public Effects updateEffects(Long id, String effects){
-        Effects effects1 = getEffectsById(id);
-        effects1.setEffects(effects);
+    public Effects getEffectsByAction(String action){
+        return effectsRepository.findEffectsByAction(action);
+    }
 
-        if (effects1.getEffects().equals(getCheckEffectsExists(effects1.getEffects())))
+    public Effects updateEffects(Long id, String bodySystem, String action){
+        Effects effects1 = getEffectsById(id);
+        effects1.setBodySystem(bodySystem);
+        effects1.setAction(action);
+
+        if (effects1.getBodySystem().equals(getCheckBodySystemExists(effects1.getBodySystem()))
+                && (effects1.getAction().equals(getCheckActionExists(effects1.getAction()))))
         { return null;}
         return effectsRepository.save(effects1); }
 
     public void deleteEffectsById(Long effectsId){
         effectsRepository.delete(getEffectsById(effectsId));
-    }
-
-    public void deleteEffectsByName(String effects){
-        effectsRepository.delete(getByEffects(effects));
     }
 }
