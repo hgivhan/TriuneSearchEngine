@@ -7,15 +7,17 @@ import javax.persistence.*;
 public class Effects {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long effectsId;
-    private String effects;
+    private String bodySystem;
+    private String action;
 
-    public Effects(){}
+    public Effects() {
+    }
 
-    public Effects(String effects) {
-        this.effects = effects;
-
+    public Effects(String bodySystem, String action) {
+        this.bodySystem = bodySystem;
+        this.action = action;
     }
 
     public Long getEffectsId() {
@@ -26,11 +28,19 @@ public class Effects {
         this.effectsId = effectsId;
     }
 
-    public String getEffects() {
-        return effects;
+    public String getBodySystem() {
+        return bodySystem;
     }
 
-    public void setEffects(String effects) {
-        this.effects = effects;
+    public void setBodySystem(String bodySystem) {
+        this.bodySystem = bodySystem;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
     }
 }

@@ -14,13 +14,16 @@ public class EffectsController {
     EffectsService effectsService;
 
     @PostMapping("/addeffect")
-    public ResponseEntity<Effects> addDosage(@RequestBody Effects effects){return new ResponseEntity<>(effectsService.addEffects(effects), HttpStatus.CREATED);}
+    public ResponseEntity<Effects> addEffect(@RequestBody Effects effects){return new ResponseEntity<>(effectsService.addEffects(effects), HttpStatus.CREATED);}
 
     @GetMapping("effectsbyid/{id}")
     public ResponseEntity<Effects> getEffectsById(@PathVariable Long id){return new ResponseEntity<>(effectsService.getEffectsById(id), HttpStatus.OK);}
 
-    @GetMapping("effectsbyname/{effects}")
-    public ResponseEntity<Effects> getEffectsByName(@PathVariable String effects){return new ResponseEntity<>(effectsService.getByEffects(effects), HttpStatus.OK);}
+    @GetMapping("effectsbysystem/{bodySystem}")
+    public ResponseEntity<Effects> getEffectsByBodySystem(@PathVariable String bodySystem){return new ResponseEntity<>(effectsService.getEffectsByBodySystem(bodySystem), HttpStatus.OK);}
+
+    @GetMapping("effectsbyaction/{action}")
+    public ResponseEntity<Effects> getEffectsByAction(@PathVariable String action){return new ResponseEntity<>(effectsService.getEffectsByAction(action), HttpStatus.OK);}
 
     @GetMapping("getalleffects")
     public ResponseEntity<Iterable<Effects>> index() {
@@ -28,12 +31,9 @@ public class EffectsController {
 
     @PutMapping("updateeffect/{id}")
     public ResponseEntity<Effects> updateEffect(@RequestBody Effects effects, @PathVariable Long id) {
-        return new ResponseEntity<>(effectsService.updateEffects(id, effects.getEffects()), HttpStatus.OK); }
+        return new ResponseEntity<>(effectsService.updateEffects(id, effects.getBodySystem(), effects.getAction()), HttpStatus.OK); }
 
     @DeleteMapping("deleteeffectbyid/{id}")
     public void deleteEffectById(@PathVariable Long id){effectsService.deleteEffectsById(id);}
-
-    @DeleteMapping("deleteeffectbyname/{effect}")
-    public void deleteEffectByName(@PathVariable String effect){effectsService.deleteEffectsByName(effect);}
 
 }
