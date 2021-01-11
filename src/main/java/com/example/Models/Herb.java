@@ -13,7 +13,6 @@ public class Herb {
     private Long herbId;
     private String latinName;
     private String commonName;
-    private String description;
 
     @OneToMany (targetEntity = OtherNames.class)
     @JoinColumn (name = "OtherNames", referencedColumnName = "otherNameId") //name- namem of this column in the joined table, refcolumnname is the foreign key from the other table
@@ -33,10 +32,9 @@ public class Herb {
 
     public Herb(){}
 
-    public Herb(String latinName, String commonName, String description, List<OtherNames> otherNames, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
+    public Herb(String latinName, String commonName, List<OtherNames> otherNames, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
         this.latinName = latinName;
         this.commonName = commonName;
-        this.description = description;
         this.otherNames = otherNames;
         this.dosage = dosage;
         this.energetics = energetics;
@@ -65,14 +63,6 @@ public class Herb {
 
     public void setCommonName(String commonName) {
         this.commonName = commonName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public List<OtherNames> getOtherNames() {

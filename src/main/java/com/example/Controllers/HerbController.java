@@ -43,7 +43,7 @@ public class HerbController {
 
     @PutMapping("updateherb/{id}")
     public ResponseEntity<Herb> updateHerb(@RequestBody Herb herb, @PathVariable Long id) {
-        return new ResponseEntity<>(herbService.putUpdateHerbById(id, herb.getLatinName(), herb.getCommonName(), herb.getDescription(), herb.getOtherNames(), herb.getDosage(), herb.getEnergetics(), herb.getEffects()), HttpStatus.OK); }
+        return new ResponseEntity<>(herbService.putUpdateHerbById(id, herb.getLatinName(), herb.getCommonName(), herb.getOtherNames(), herb.getDosage(), herb.getEnergetics(), herb.getEffects()), HttpStatus.OK); }
 
     @DeleteMapping("deleteherbbyid/{id}")
     public void deleteHerbById(@PathVariable Long id){herbService.deleteHerbById(id);}
