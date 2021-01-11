@@ -31,7 +31,7 @@ public class EffectsController {
 
     @PutMapping("updateeffect/{id}")
     public ResponseEntity<Effects> updateEffect(@RequestBody Effects effects, @PathVariable Long id) {
-        return new ResponseEntity<>(effectsService.updateEffects(id, effects.getBodySystem(), effects.getAction()), HttpStatus.OK); }
+        return new ResponseEntity<>(effectsService.updateEffects(id, effects.getBodySystem(), effects.getActions()), HttpStatus.OK); }
 
     @DeleteMapping("deleteeffectbyid/{id}")
     public void deleteEffectById(@PathVariable Long id){effectsService.deleteEffectsById(id);}

@@ -14,7 +14,7 @@ public class EffectsService {
 
     public Effects addEffects(Effects effects){
         if (effects.getBodySystem().equals(getCheckBodySystemExists(effects.getBodySystem()))
-        && (effects.getAction().equals(getCheckActionExists(effects.getAction())))){
+        && (effects.getActions().equals(getCheckActionExists(effects.getActions())))){
         { return null;
         }
         }
@@ -52,10 +52,10 @@ public class EffectsService {
     public Effects updateEffects(Long id, String bodySystem, String action){
         Effects effects1 = getEffectsById(id);
         effects1.setBodySystem(bodySystem);
-        effects1.setAction(action);
+        effects1.setActions(action);
 
         if (effects1.getBodySystem().equals(getCheckBodySystemExists(effects1.getBodySystem()))
-                && (effects1.getAction().equals(getCheckActionExists(effects1.getAction()))))
+                && (effects1.getActions().equals(getCheckActionExists(effects1.getActions()))))
         { return null;}
         return effectsRepository.save(effects1); }
 

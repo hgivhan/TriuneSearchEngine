@@ -1,7 +1,7 @@
-INSERT INTO OtherNames (otherNameId, otherName)
-VALUES (1, 'Bee Balm');
-INSERT INTO OtherNames (otherNameId, otherName)
-VALUES (2, 'Oswego Tea');
+INSERT INTO OtherNames (otherNameId, otherName, herbId)
+VALUES (1, 'Bee Balm', 1);
+INSERT INTO OtherNames (otherNameId, otherName, herbId)
+VALUES (2, 'Oswego Tea', 1);
 
 INSERT INTO Dosage (dosageId, dosage)
 VALUES (1, '1/6');
@@ -217,5 +217,17 @@ VALUES (5, 'cool', 'slightly dry');
 INSERT INTO Energetics (energeticsId, temperature, moisture)
 VALUES (6, 'warm', 'slightly dry');
 
-INSERT INTO Herb (herbId, latinName, commonName, OtherNames, dosage, energetics, effects)
-VALUES (1, 'Mondarda didyma', 'Bergamot','Bee Balm', '1/6', 'warm, slightly dry', );
+INSERT INTO Herb (herbId, latinName, commonName, OtherNamesId, dosageId, energeticsId, effectsId)
+VALUES (1, 'Mondarda didyma', 'Bergamot', 1, 1, 6, 20);
+INSERT INTO Herb (herbId, latinName, commonName, OtherNamesId, dosageId, energeticsId, effectsId)
+VALUES (1, 'Mondarda didyma', 'Bergamot', 2, null, null, 21);
+INSERT INTO Herb (herbId, latinName, commonName, OtherNamesId, dosageId, energeticsId, effectsId)
+VALUES (1, 'Mondarda didyma', 'Bergamot', null, null, null, 81);
+INSERT INTO Herb (herbId, latinName, commonName, OtherNamesId, dosageId, energeticsId, effectsId)
+VALUES (1, 'Mondarda didyma', 'Bergamot', null, null, null, 24);
+INSERT INTO Herb (herbId, latinName, commonName, OtherNamesId, dosageId, energeticsId, effectsId)
+VALUES (1, 'Mondarda didyma', 'Bergamot', null, null, null, 6);
+INSERT INTO Herb (herbId, latinName, commonName, OtherNamesId, dosageId, energeticsId, effectsId)
+VALUES (1, 'Mondarda didyma', 'Bergamot', null, null, null, 18);
+INSERT INTO Herb (herbId, latinName, commonName, OtherNamesId, dosageId, energeticsId, effectsId)
+VALUES (1, 'Mondarda didyma', 'Bergamot', null, null, null, 75);
