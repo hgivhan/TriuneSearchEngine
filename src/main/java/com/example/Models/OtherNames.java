@@ -9,12 +9,11 @@ public class OtherNames {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-
     private Long otherNameId;
     String otherName;
 
     @ManyToMany (targetEntity = Herb.class)
-    @JoinColumn (name = "Herb", referencedColumnName = "herbId") //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
+    @JoinColumn (name = "herbId") //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
     private List<Herb> herb;
 
     public OtherNames(Long otherNameId, String otherName, List<Herb> herb) {

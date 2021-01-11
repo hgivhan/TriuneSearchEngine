@@ -19,7 +19,7 @@ public class OtherNamesService {
     }
 
     public String getCheckOtherNameExists(String otherName){
-        if(otherNamesRepository.findOtherNamesByName(otherName) != null){
+        if(otherNamesRepository.findOtherNamesByOtherName(otherName) != null){
             return otherName;
         }
         return "This item is not in the directory yet.";
@@ -28,11 +28,11 @@ public class OtherNamesService {
     public Iterable<OtherNames> otherNamesIndex(){return otherNamesRepository.findAll();}
 
     public OtherNames getOtherNameById(Long otherNameId){
-        return otherNamesRepository.findOtherNamesById(otherNameId);
+        return otherNamesRepository.findOtherNamesByOtherNameId(otherNameId);
     }
 
     public OtherNames getByOtherName(String otherName){
-        return otherNamesRepository.findOtherNamesByName(otherName);
+        return otherNamesRepository.findOtherNamesByOtherName(otherName);
     }
 
     public OtherNames updateOtherName(Long id, String otherName){

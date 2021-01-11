@@ -1,7 +1,22 @@
+CREATE TABLE OtherNames (
+    otherNameId int NOT NULL AUTO_INCREMENT,
+    otherName varchar(255) NOT NULL,
+    herbId int NOT NULL,
+    PRIMARY KEY (otherNameId)
+);
+
 INSERT INTO OtherNames (otherNameId, otherName, herbId)
 VALUES (1, 'Bee Balm', 1);
 INSERT INTO OtherNames (otherNameId, otherName, herbId)
 VALUES (2, 'Oswego Tea', 1);
+
+
+
+CREATE TABLE Dosage (
+    dosageId int NOT NULL AUTO_INCREMENT,
+    dosage varchar(255) NOT NULL,
+    PRIMARY KEY (dosageId)
+);
 
 INSERT INTO Dosage (dosageId, dosage)
 VALUES (1, '1/6');
@@ -9,6 +24,15 @@ INSERT INTO Dosage (dosageId, dosage)
 VALUES (2, '1/9');
 INSERT INTO Dosage (dosageId, dosage)
 VALUES (3, '1/18');
+
+
+
+CREATE TABLE Effects (
+    effectsId int NOT NULL AUTO_INCREMENT,
+    bodySystem varchar(255) NOT NULL,
+    actions varchar(255) NOT NULL,
+    PRIMARY KEY (effectsId)
+);
 
 INSERT INTO Effects (effectsId, bodySystem, actions)
 VALUES (1, 'Bladder/Genitourinary Tract (incl. Prostate, Ureters', '+');
@@ -204,6 +228,14 @@ INSERT INTO Effects (effectsId, bodySystem, actions)
 VALUES (96, 'Thyroid/Parathyroid', '-');
 
 
+
+CREATE TABLE Energetics (
+    energeticsId int NOT NULL AUTO_INCREMENT,
+    temperature varchar(255),
+    moisture varchar(255),
+    PRIMARY KEY (energeticsId)
+);
+
 INSERT INTO Energetics (energeticsId, temperature, moisture)
 VALUES (1, 'hot', 'damp');
 INSERT INTO Energetics (energeticsId, temperature, moisture)
@@ -216,6 +248,19 @@ INSERT INTO Energetics (energeticsId, temperature, moisture)
 VALUES (5, 'cool', 'slightly dry');
 INSERT INTO Energetics (energeticsId, temperature, moisture)
 VALUES (6, 'warm', 'slightly dry');
+
+
+
+CREATE TABLE Herb (
+    herbId int NOT NULL AUTO_INCREMENT,
+    latinName varchar(255) NOT NULL,
+    commonName varchar(255),
+    otherNamesId int,
+    dosageId int,
+    energeticsId int,
+    effectsId int,
+    PRIMARY KEY (herbId)
+);
 
 INSERT INTO Herb (herbId, latinName, commonName, OtherNamesId, dosageId, energeticsId, effectsId)
 VALUES (1, 'Mondarda didyma', 'Bergamot', 1, 1, 6, 20);

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OtherNamesRepository extends CrudRepository<OtherNames, Long> {
-    OtherNames findOtherNamesByName(String otherName);
-    OtherNames findOtherNamesById(Long otherNameId);
+    OtherNames findOtherNamesByOtherName(String otherName);
+    OtherNames findOtherNamesByOtherNameId(Long otherNameId);
 }

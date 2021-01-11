@@ -31,11 +31,8 @@ public class HerbController {
     @GetMapping("herbsbyenergetics/{energetics}")
     public ResponseEntity<Herb> getHerbByEnergetics(@PathVariable String energetics){return new ResponseEntity<>(herbService.getHerbByEnergetics(energetics), HttpStatus.OK);}
 
-    @GetMapping("herbsbybodysystem/{bodySystem}")
-    public ResponseEntity<Herb> getHerbByBodySystem(@PathVariable String bodySystem){return new ResponseEntity<>(herbService.getHerbByBodySystemsAffected(bodySystem), HttpStatus.OK);}
-
-    @GetMapping("herbsbyaction/{action}")
-    public ResponseEntity<Herb> getHerbByAction(@PathVariable String action){return new ResponseEntity<>(herbService.getHerbByActions(action), HttpStatus.OK);}
+    @GetMapping("herbsbyaction/{effects}")
+    public ResponseEntity<Herb> getHerbByEffects(@PathVariable String effects){return new ResponseEntity<>(herbService.getHerbByEffects(effects), HttpStatus.OK);}
 
     @GetMapping("getallherbs")
     public ResponseEntity<Iterable<Herb>> index() {

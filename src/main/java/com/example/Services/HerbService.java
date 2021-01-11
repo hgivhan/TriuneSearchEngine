@@ -28,7 +28,7 @@ public class HerbService {
     }
 
     public Herb getHerbById(Long id){
-        return herbRepository.findHerbById(id);
+        return herbRepository.findHerbByHerbId(id);
     }
 
     public Herb getHerbByLatinName(String latinName){
@@ -47,12 +47,8 @@ public class HerbService {
         return herbRepository.findHerbByEnergetics(energetics);
     }
 
-    public Herb getHerbByBodySystemsAffected(String bodySystem){
-        return herbRepository.findHerbByBodySystem(bodySystem);
-    }
-
-    public Herb getHerbByActions(String actions){
-        return herbRepository.findHerbByAction(actions);
+    public Herb getHerbByEffects(String effects){
+        return herbRepository.findHerbByEffects(effects);
     }
 
     public Iterable<Herb> herbIndex(){return herbRepository.findAll();}

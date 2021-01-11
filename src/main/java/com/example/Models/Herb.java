@@ -15,19 +15,21 @@ public class Herb {
     private String commonName;
 
     @ManyToMany (targetEntity = OtherNames.class)
-    @JoinColumn (name = "OtherNames", referencedColumnName = "otherNamesId") //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
+    @JoinColumn (name = "OtherNames") //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
     private List<OtherNames> otherNames; // ^^ must match fk name in othernames table
 
     @OneToMany (targetEntity = Dosage.class)
-    @JoinColumn (name = "Dosage", referencedColumnName = "dosageId")
+    @JoinColumn (name = "Dosage")
     private List<Dosage> dosage;
 
+    //referencedColumnName = "dosageId" <= don't need this in source class
+
     @OneToMany (targetEntity = Energetics.class)
-    @JoinColumn (name = "Energetics", referencedColumnName = "energeticsId")
+    @JoinColumn (name = "Energetics")
     private List<Energetics> energetics;
 
     @OneToMany (targetEntity = Effects.class)
-    @JoinColumn (name = "Effects", referencedColumnName = "effectsId")
+    @JoinColumn (name = "Effects")
     private List<Effects> effects;
 
     public Herb(){}

@@ -8,7 +8,6 @@ public class Dosage {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-
     private Long dosageId;
     private String dosage;
 
