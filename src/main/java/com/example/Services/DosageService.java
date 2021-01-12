@@ -19,7 +19,7 @@ public class DosageService {
     }
 
     public String getCheckDosageExists(String dosage){
-        if(dosageRepository.findDosageByName(dosage) != null){
+        if(dosageRepository.findDosageByDosage(dosage) != null){
             return dosage;
         }
         return "This item is not in the directory yet.";
@@ -28,11 +28,11 @@ public class DosageService {
     public Iterable<Dosage> dosageIndex(){return dosageRepository.findAll();}
 
     public Dosage getDosageById(Long dosageId){
-        return dosageRepository.findDosageById(dosageId);
+        return dosageRepository.findDosageByDosageId(dosageId);
     }
 
     public Dosage getByDosage(String dosage){
-        return dosageRepository.findDosageByName(dosage);
+        return dosageRepository.findDosageByDosage(dosage);
     }
 
     public Dosage updateDosage(Long id, String dosage){

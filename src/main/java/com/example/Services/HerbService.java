@@ -28,7 +28,7 @@ public class HerbService {
     }
 
     public Herb getHerbById(Long id){
-        return herbRepository.findHerbById(id);
+        return herbRepository.findHerbByHerbId(id);
     }
 
     public Herb getHerbByLatinName(String latinName){
@@ -47,21 +47,16 @@ public class HerbService {
         return herbRepository.findHerbByEnergetics(energetics);
     }
 
-    public Herb getHerbByBodySystemsAffected(String bodySystem){
-        return herbRepository.findHerbByBodySystem(bodySystem);
-    }
-
-    public Herb getHerbByActions(String actions){
-        return herbRepository.findHerbByAction(actions);
+    public Herb getHerbByEffects(String effects){
+        return herbRepository.findHerbByEffects(effects);
     }
 
     public Iterable<Herb> herbIndex(){return herbRepository.findAll();}
 
-    public Herb putUpdateHerbById(Long id, String latinName, String commonName, String description, List<OtherNames> otherNames, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
+    public Herb putUpdateHerbById(Long id, String latinName, String commonName, List<OtherNames> otherNames, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
         Herb herb = getHerbById(id);
         herb.setLatinName(latinName);
         herb.setCommonName(commonName);
-        herb.setDescription(description);
         herb.setOtherNames(otherNames);
         herb.setDosage(dosage);
         herb.setEnergetics(energetics);

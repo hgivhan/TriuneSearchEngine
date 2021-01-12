@@ -23,7 +23,7 @@ public class EffectsController {
     public ResponseEntity<Effects> getEffectsByBodySystem(@PathVariable String bodySystem){return new ResponseEntity<>(effectsService.getEffectsByBodySystem(bodySystem), HttpStatus.OK);}
 
     @GetMapping("effectsbyaction/{action}")
-    public ResponseEntity<Effects> getEffectsByAction(@PathVariable String action){return new ResponseEntity<>(effectsService.getEffectsByAction(action), HttpStatus.OK);}
+    public ResponseEntity<Effects> getEffectsByAction(@PathVariable String actions){return new ResponseEntity<>(effectsService.getEffectsByAction(actions), HttpStatus.OK);}
 
     @GetMapping("getalleffects")
     public ResponseEntity<Iterable<Effects>> index() {
@@ -31,7 +31,7 @@ public class EffectsController {
 
     @PutMapping("updateeffect/{id}")
     public ResponseEntity<Effects> updateEffect(@RequestBody Effects effects, @PathVariable Long id) {
-        return new ResponseEntity<>(effectsService.updateEffects(id, effects.getBodySystem(), effects.getAction()), HttpStatus.OK); }
+        return new ResponseEntity<>(effectsService.updateEffects(id, effects.getBodySystem(), effects.getActions()), HttpStatus.OK); }
 
     @DeleteMapping("deleteeffectbyid/{id}")
     public void deleteEffectById(@PathVariable Long id){effectsService.deleteEffectsById(id);}

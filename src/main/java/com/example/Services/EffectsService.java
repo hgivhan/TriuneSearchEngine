@@ -14,7 +14,7 @@ public class EffectsService {
 
     public Effects addEffects(Effects effects){
         if (effects.getBodySystem().equals(getCheckBodySystemExists(effects.getBodySystem()))
-        && (effects.getAction().equals(getCheckActionExists(effects.getAction())))){
+        && (effects.getActions().equals(getCheckActionExists(effects.getActions())))){
         { return null;
         }
         }
@@ -28,9 +28,9 @@ public class EffectsService {
         return "This item is not in the directory yet.";
     }
 
-    public String getCheckActionExists(String action){
-        if(effectsRepository.findEffectsByAction(action) != null){
-            return action;
+    public String getCheckActionExists(String actions){
+        if(effectsRepository.findEffectsByActions(actions) != null){
+            return actions;
         }
         return "This item is not in the directory yet.";
     }
@@ -38,24 +38,24 @@ public class EffectsService {
     public Iterable<Effects> effectsIndex(){return effectsRepository.findAll();}
 
     public Effects getEffectsById(Long effectsId){
-        return effectsRepository.findEffectsById(effectsId);
+        return effectsRepository.findEffectsByEffectsId(effectsId);
     }
 
     public Effects getEffectsByBodySystem(String bodySystem){
         return effectsRepository.findEffectsByBodySystem(bodySystem);
     }
 
-    public Effects getEffectsByAction(String action){
-        return effectsRepository.findEffectsByAction(action);
+    public Effects getEffectsByAction(String actions){
+        return effectsRepository.findEffectsByActions(actions);
     }
 
-    public Effects updateEffects(Long id, String bodySystem, String action){
+    public Effects updateEffects(Long id, String bodySystem, String actions){
         Effects effects1 = getEffectsById(id);
         effects1.setBodySystem(bodySystem);
-        effects1.setAction(action);
+        effects1.setActions(actions);
 
         if (effects1.getBodySystem().equals(getCheckBodySystemExists(effects1.getBodySystem()))
-                && (effects1.getAction().equals(getCheckActionExists(effects1.getAction()))))
+                && (effects1.getActions().equals(getCheckActionExists(effects1.getActions()))))
         { return null;}
         return effectsRepository.save(effects1); }
 

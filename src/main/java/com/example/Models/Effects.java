@@ -10,14 +10,14 @@ public class Effects {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long effectsId;
     private String bodySystem;
-    private String action;
+    private String actions;
 
     public Effects() {
     }
 
-    public Effects(String bodySystem, String action) {
+    public Effects(String bodySystem, String actions) {
         this.bodySystem = bodySystem;
-        this.action = action;
+        this.actions = actions;
     }
 
     public Long getEffectsId() {
@@ -36,11 +36,11 @@ public class Effects {
         this.bodySystem = bodySystem;
     }
 
-    public String getAction() {
-        return action;
+    public String getActions() {
+        return actions;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public void setActions(String actions) {
+        this.actions = actions;
     }
 }

@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface EffectsRepository extends CrudRepository<Effects, Long> {
 
     Effects findEffectsByBodySystem(String bodySystem);
-    Effects findEffectsByAction(String action);
-    Effects findEffectsById(Long effectsId);
+    Effects findEffectsByActions(String action);
+    Effects findEffectsByEffectsId(Long effectsId);
 }

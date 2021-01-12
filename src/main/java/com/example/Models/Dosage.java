@@ -8,8 +8,7 @@ public class Dosage {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-
-    private Long dosageID;
+    private Long dosageId;
     private String dosage;
 
     public Dosage(){}
@@ -18,12 +17,12 @@ public class Dosage {
         this.dosage = dosage;
     }
 
-    public Long getDosageID() {
-        return dosageID;
+    public Long getDosageId() {
+        return dosageId;
     }
 
-    public void setDosageID(Long dosageID) {
-        this.dosageID = dosageID;
+    public void setDosageId(Long dosageId) {
+        this.dosageId = dosageId;
     }
 
     public String getDosage() {

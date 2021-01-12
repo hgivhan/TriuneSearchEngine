@@ -9,7 +9,6 @@ public class Energetics {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long energeticsId;
     private String temperature;
     private String moisture;

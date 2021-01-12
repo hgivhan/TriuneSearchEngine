@@ -29,7 +29,7 @@ public class EnergeticsService {
     public Iterable<Energetics> energeticsIndex(){return energeticsRepository.findAll();}
 
     public Energetics getEnergeticsById(Long energeticsId){
-        return energeticsRepository.findEnergeticsById(energeticsId);
+        return energeticsRepository.findEnergeticsByEnergeticsId(energeticsId);
     }
 
     public Energetics getEnergeticsByTemperature(String temperature){
