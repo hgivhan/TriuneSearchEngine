@@ -14,30 +14,30 @@ public class Herb {
     private String latinName;
     private String commonName;
 
-    @ManyToMany (targetEntity = OtherNames.class)
-    @JoinColumn (name = "OtherNames") //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
-    private List<OtherNames> otherNames; // ^^ must match fk name in othernames table
+//    @OneToMany (targetEntity = OtherNames.class)
+//    @JoinColumn (name = "otherNamesId") //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
+//    private List<OtherNames> otherNames; // ^^ must match fk name in othernames table
 
     @OneToMany (targetEntity = Dosage.class)
-    @JoinColumn (name = "Dosage")
+    @JoinColumn (name = "dosageId")
     private List<Dosage> dosage;
 
     //referencedColumnName = "dosageId" <= don't need this in source class
 
     @OneToMany (targetEntity = Energetics.class)
-    @JoinColumn (name = "Energetics")
+    @JoinColumn (name = "energeticsId")
     private List<Energetics> energetics;
 
     @OneToMany (targetEntity = Effects.class)
-    @JoinColumn (name = "Effects")
+    @JoinColumn (name = "effectsId")
     private List<Effects> effects;
 
     public Herb(){}
 
-    public Herb(String latinName, String commonName, List<OtherNames> otherNames, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
+    public Herb(String latinName, String commonName, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
         this.latinName = latinName;
         this.commonName = commonName;
-        this.otherNames = otherNames;
+       // this.otherNames = otherNames;
         this.dosage = dosage;
         this.energetics = energetics;
         this.effects = effects;
@@ -67,13 +67,13 @@ public class Herb {
         this.commonName = commonName;
     }
 
-    public List<OtherNames> getOtherNames() {
-        return otherNames;
-    }
-
-    public void setOtherNames(List<OtherNames> otherNames) {
-        this.otherNames = otherNames;
-    }
+//    public List<OtherNames> getOtherNames() {
+//        return otherNames;
+//    }
+//
+//    public void setOtherNames(List<OtherNames> otherNames) {
+//        this.otherNames = otherNames;
+//    }
 
     public List<Dosage> getDosage() {
         return dosage;

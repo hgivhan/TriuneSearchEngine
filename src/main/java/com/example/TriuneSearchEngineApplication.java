@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-//@EnableJpaRepositories("com.example")
+@EntityScan("com.example")
 public class TriuneSearchEngineApplication {
 
 	public static void main(String[] args) {
