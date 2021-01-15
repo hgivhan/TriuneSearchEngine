@@ -14,9 +14,9 @@ public class Herb {
     private String latinName;
     private String commonName;
 
-//    @OneToMany (targetEntity = OtherNames.class)
-//    @JoinColumn (name = "otherNamesId") //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
-//    private List<OtherNames> otherNames; // ^^ must match fk name in othernames table
+    @OneToMany (targetEntity = OtherNames.class)
+    @JoinColumn (name = "otherNamesId") //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
+    private List<OtherNames> otherNames; // ^^ must match fk name in othernames table
 
     @OneToMany (targetEntity = Dosage.class)
     @JoinColumn (name = "dosageId")
@@ -67,13 +67,13 @@ public class Herb {
         this.commonName = commonName;
     }
 
-//    public List<OtherNames> getOtherNames() {
-//        return otherNames;
-//    }
-//
-//    public void setOtherNames(List<OtherNames> otherNames) {
-//        this.otherNames = otherNames;
-//    }
+    public List<OtherNames> getOtherNames() {
+        return otherNames;
+    }
+
+    public void setOtherNames(List<OtherNames> otherNames) {
+        this.otherNames = otherNames;
+    }
 
     public List<Dosage> getDosage() {
         return dosage;
