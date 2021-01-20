@@ -34,10 +34,10 @@ public class Herb {
 
     public Herb(){}
 
-    public Herb(String latinName, String commonName, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
+    public Herb(String latinName, String commonName, List<Dosage> dosage, List<OtherNames> otherNames, List<Energetics> energetics, List<Effects> effects) {
         this.latinName = latinName;
         this.commonName = commonName;
-       // this.otherNames = otherNames;
+        this.otherNames = otherNames;
         this.dosage = dosage;
         this.energetics = energetics;
         this.effects = effects;
