@@ -53,11 +53,11 @@ public class HerbService {
 
     public Iterable<Herb> herbIndex(){return herbRepository.findAll();}
 
-    public Herb putUpdateHerbById(Long id, String latinName, String commonName, List<OtherNames> otherNames, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
+    public Herb putUpdateHerbById(Long id, String latinName, String commonName, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
         Herb herb = getHerbById(id);
         herb.setLatinName(latinName);
         herb.setCommonName(commonName);
-        herb.setOtherNames(otherNames);
+//        herb.setOtherNames(otherNames);
         herb.setDosage(dosage);
         herb.setEnergetics(energetics);
         herb.setEffects(effects);;

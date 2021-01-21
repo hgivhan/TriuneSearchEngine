@@ -12,14 +12,17 @@ public class OtherNames {
     private Long otherNameId;
     String otherName;
 
-    @ManyToMany (targetEntity = Herb.class)
+    @ManyToOne (targetEntity = Herb.class)
     @JoinColumn (name = "herbId") //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
-    private List<Herb> herb;
+    private Herb herb;
 
-    public OtherNames(Long otherNameId, String otherName, List<Herb> herb) {
+    public OtherNames(Long otherNameId, String otherName, Herb herb) {
         this.otherNameId = otherNameId;
         this.otherName = otherName;
         this.herb = herb;
+    }
+
+    public OtherNames() {
     }
 
     public Long getOtherNameId() {
@@ -38,11 +41,11 @@ public class OtherNames {
         this.otherName = otherName;
     }
 
-    public List<Herb> getHerb() {
+    public Herb getHerb() {
         return herb;
     }
 
-    public void setHerb(List<Herb> herb) {
+    public void setHerb(Herb herb) {
         this.herb = herb;
     }
 }
