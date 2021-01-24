@@ -5,8 +5,6 @@ import com.example.Repositories.HerbRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class HerbService {
 
@@ -53,7 +51,7 @@ public class HerbService {
 
     public Iterable<Herb> herbIndex(){return herbRepository.findAll();}
 
-    public Herb putUpdateHerbById(Long id, String latinName, String commonName, List<Dosage> dosage, List<Energetics> energetics, List<Effects> effects) {
+    public Herb putUpdateHerbById(Long id, String latinName, String commonName, Dosage dosage, Energetics energetics, Effects effects) {
         Herb herb = getHerbById(id);
         herb.setLatinName(latinName);
         herb.setCommonName(commonName);

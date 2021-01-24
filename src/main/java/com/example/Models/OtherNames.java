@@ -12,8 +12,7 @@ public class OtherNames {
     private Long otherNameId;
     String otherName;
 
-    @ManyToOne (targetEntity = Herb.class)
-    @JoinColumn (name = "herbId") //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
+    @OneToOne (mappedBy = "otherName")
     private Herb herb;
 
     public OtherNames(Long otherNameId, String otherName, Herb herb) {

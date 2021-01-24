@@ -1,7 +1,6 @@
 package com.example.Models;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table
@@ -14,32 +13,32 @@ public class Herb {
     private String latinName;
     private String commonName;
 
-    @OneToMany (targetEntity = OtherNames.class)
-    @JoinColumn (name = "otherNamesId") //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
-    private List<OtherNames> otherNames; // ^^ must match fk name in othernames table
+    @OneToOne (targetEntity = OtherNames.class)
+    @JoinColumn (name = "otherNameId", referencedColumnName = "otherNameId" ) //name- name of this column in the joined table, refcolumnname is the foreign key from the other table
+    private OtherNames otherName; // ^^ must match fk name in othernames table
 
-    @OneToMany (targetEntity = Dosage.class)
-    @JoinColumn (name = "dosageId")
-    private List<Dosage> dosage;
+    @OneToOne (targetEntity = Dosage.class)
+    @JoinColumn (name = "dosageId", referencedColumnName = "dosageId")
+    private Dosage dosage;
 
     //referencedColumnName = "dosageId" <= don't need this in source class
 
-    @OneToMany (targetEntity = Energetics.class)
-    @JoinColumn (name = "energeticsId")
-    private List<Energetics> energetics;
+    @OneToOne (targetEntity = Energetics.class)
+    @JoinColumn (name = "energeticsId", referencedColumnName = "energeticsId")
+    private Energetics energetics;
 
-    @OneToMany (targetEntity = Effects.class)
-    @JoinColumn (name = "effectsId")
-    private List<Effects> effects;
+    @OneToOne (targetEntity = Effects.class)
+    @JoinColumn (name = "effectsId", referencedColumnName = "effectsId")
+    private Effects effects;
 
     public Herb(){}
 
-    public Herb(String latinName, String commonName, List<Dosage> dosage, List<OtherNames> otherNames, List<Energetics> energetics, List<Effects> effects) {
+    public Herb(String latinName, String commonName, Dosage dosage, OtherNames otherNames, Energetics energeticsId, Effects effects) {
         this.latinName = latinName;
         this.commonName = commonName;
-        this.otherNames = otherNames;
+        this.otherName = otherNames;
         this.dosage = dosage;
-        this.energetics = energetics;
+        this.energetics = energeticsId;
         this.effects = effects;
     }
 
@@ -67,31 +66,31 @@ public class Herb {
         this.commonName = commonName;
     }
 
-    public List<OtherNames> getOtherNames() {
-        return otherNames;
+    public OtherNames getOtherNames() {
+        return otherName;
     }
 
-    public void setOtherNames(List<OtherNames> otherNames) {
-        this.otherNames = otherNames;
+    public void setOtherNames(OtherNames otherNames) {
+        this.otherName = otherNames;
     }
 
-    public List<Dosage> getDosage() {
+    public Dosage getDosage() {
         return dosage;
     }
 
-    public void setDosage(List<Dosage> dosage) { this.dosage = dosage; }
+    public void setDosage(Dosage dosage) { this.dosage = dosage; }
 
-    public List<Energetics> getEnergetics() {
+    public Energetics getEnergetics() {
         return energetics;
     }
 
-    public void setEnergetics(List<Energetics> energetics) {
+    public void setEnergetics(Energetics energetics) {
         this.energetics = energetics;
     }
 
-    public List<Effects> getEffects() { return effects; }
+    public Effects getEffects() { return effects; }
 
-    public void setEffects(List<Effects> effects) {
+    public void setEffects(Effects effects) {
         this.effects = effects;
     }
 }
