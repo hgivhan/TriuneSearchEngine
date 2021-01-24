@@ -13,12 +13,16 @@ public class Energetics {
     private String temperature;
     private String moisture;
 
+    @OneToOne (mappedBy = "energetics")
+    private Herb herb;
+
     public Energetics() {
     }
 
-    public Energetics(String temperature, String moisture) {
+    public Energetics(String temperature, String moisture, Herb herb) {
         this.temperature = temperature;
         this.moisture = moisture;
+        this.herb = herb;
     }
 
     public Long getEnergeticsId() {
@@ -43,5 +47,13 @@ public class Energetics {
 
     public void setMoisture(String moisture) {
         this.moisture = moisture;
+    }
+
+    public Herb getHerb() {
+        return herb;
+    }
+
+    public void setHerb(Herb herb) {
+        this.herb = herb;
     }
 }

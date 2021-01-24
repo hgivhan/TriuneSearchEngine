@@ -11,10 +11,14 @@ public class Dosage {
     private Long dosageId;
     private String dosage;
 
+    @OneToOne (mappedBy = "dosage")
+    private Herb herb;
+
     public Dosage(){}
 
-    public Dosage(String dosage) {
+    public Dosage(String dosage, Herb herb) {
         this.dosage = dosage;
+        this.herb = herb;
     }
 
     public Long getDosageId() {
@@ -31,5 +35,13 @@ public class Dosage {
 
     public void setDosage(String dosage) {
         this.dosage = dosage;
+    }
+
+    public Herb getHerb() {
+        return herb;
+    }
+
+    public void setHerb(Herb herb) {
+        this.herb = herb;
     }
 }

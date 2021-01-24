@@ -12,12 +12,16 @@ public class Effects {
     private String bodySystem;
     private String actions;
 
+    @OneToOne (mappedBy = "effects")
+    private Herb herb;
+
     public Effects() {
     }
 
-    public Effects(String bodySystem, String actions) {
+    public Effects(String bodySystem, String actions, Herb herb) {
         this.bodySystem = bodySystem;
         this.actions = actions;
+        this.herb = herb;
     }
 
     public Long getEffectsId() {
@@ -42,5 +46,13 @@ public class Effects {
 
     public void setActions(String actions) {
         this.actions = actions;
+    }
+
+    public Herb getHerb() {
+        return herb;
+    }
+
+    public void setHerb(Herb herb) {
+        this.herb = herb;
     }
 }
