@@ -12,7 +12,7 @@ public class OtherNames {
     private Long otherNameId;
     String otherName;
 
-    @OneToOne (mappedBy = "otherNames")
+    @OneToOne (mappedBy = "otherName")
     private Herb herb;
 
     public OtherNames(Long otherNameId, String otherName, Herb herb) {

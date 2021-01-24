@@ -1,45 +1,41 @@
-CREATE TABLE IF NOT EXISTS Other_Names (
+CREATE TABLE IF NOT EXISTS OtherNames (
     otherNameId int NOT NULL AUTO_INCREMENT,
     otherName varchar(255) NOT NULL,
-    herbId int NOT NULL,
+--     herbId int NOT NULL,
     PRIMARY KEY (otherNameId)
 );
 
--- INSERT INTO Other_Names (other_Name, herb_Id)
--- VALUES ('Bee Balm', 1);
--- INSERT INTO Other_Names (other_Name, herb_Id)
--- VALUES ('Oswego Tea', 1);
+INSERT INTO OtherNames (otherName)
+VALUES ('Bee Balm');
 
---
---
--- CREATE TABLE IF NOT EXISTS Dosage (
---     dosageId int NOT NULL AUTO_INCREMENT,
---     dosage varchar(255) NOT NULL,
---     PRIMARY KEY (dosageId)
--- );
---
--- INSERT INTO Dosage (dosage)
--- VALUES ('1/6');
--- INSERT INTO Dosage (dosage)
--- VALUES ('1/9');
--- INSERT INTO Dosage (dosage)
--- VALUES ('1/18');
---
---
---
--- CREATE TABLE IF NOT EXISTS Effects (
---     effectsId int NOT NULL AUTO_INCREMENT,
---     bodySystem varchar(255) NOT NULL,
---     actions varchar(255) NOT NULL,
---     PRIMARY KEY (effectsId)
--- );
+CREATE TABLE IF NOT EXISTS Dosage (
+    dosageId int NOT NULL AUTO_INCREMENT,
+    dosage varchar(255) NOT NULL,
+    PRIMARY KEY (dosageId)
+);
 
--- INSERT INTO Effects (effectsId, bodySystem, actions)
--- VALUES (1, 'Bladder/Genitourinary Tract (incl. Prostate, Ureters', '+');
--- INSERT INTO Effects (effectsId, bodySystem, actions)
--- VALUES (2, 'Bladder/Genitourinary Tract (incl. Prostate, Ureters', '0');
--- INSERT INTO Effects (effectsId, bodySystem, actions)
--- VALUES (3, 'Bladder/Genitourinary Tract (incl. Prostate, Ureters', '-');
+INSERT INTO Dosage (dosage)
+VALUES ('1/6');
+INSERT INTO Dosage (dosage)
+VALUES ('1/9');
+INSERT INTO Dosage (dosage)
+VALUES ('1/18');
+
+
+
+CREATE TABLE IF NOT EXISTS Effects (
+    effectsId int NOT NULL AUTO_INCREMENT,
+    body_System varchar(255) NOT NULL,
+    actions varchar(255) NOT NULL,
+    PRIMARY KEY (effectsId)
+);
+
+INSERT INTO Effects (body_System, actions)
+VALUES ('Bladder/Genitourinary Tract (incl. Prostate, Ureters)', '+');
+INSERT INTO Effects (body_System, actions)
+VALUES ('Bladder/Genitourinary Tract (incl. Prostate, Ureters)', '0');
+INSERT INTO Effects (body_System, actions)
+VALUES ('Bladder/Genitourinary Tract (incl. Prostate, Ureters)', '-');
 -- INSERT INTO Effects (effectsId, bodySystem, actions)
 -- VALUES (4, 'Blood/Xue (incl. Circulation)', '+');
 -- INSERT INTO Effects (effectsId, bodySystem, actions)
@@ -229,19 +225,19 @@ CREATE TABLE IF NOT EXISTS Other_Names (
 
 
 
--- CREATE TABLE IF NOT EXISTS Energetics (
---     energeticsId int NOT NULL AUTO_INCREMENT,
---     temperature varchar(255),
---     moisture varchar(255),
---     PRIMARY KEY (energeticsId)
--- );
+CREATE TABLE IF NOT EXISTS Energetics (
+    energeticsId int NOT NULL AUTO_INCREMENT,
+    temperature varchar(255),
+    moisture varchar(255),
+    PRIMARY KEY (energeticsId)
+);
 
--- INSERT INTO Energetics (energeticsId, temperature, moisture)
--- VALUES ('hot', 'damp');
--- INSERT INTO Energetics (energeticsId, temperature, moisture)
--- VALUES (2, 'hot', 'dry');
--- INSERT INTO Energetics (energeticsId, temperature, moisture)
--- VALUES (3, 'cold', 'dry');
+INSERT INTO Energetics (temperature, moisture)
+VALUES ('hot', 'damp');
+INSERT INTO Energetics (temperature, moisture)
+VALUES ('hot', 'dry');
+INSERT INTO Energetics (temperature, moisture)
+VALUES ('cold', 'dry');
 -- INSERT INTO Energetics (energeticsId, temperature, moisture)
 -- VALUES (4, 'cold', 'damp');
 -- INSERT INTO Energetics (energeticsId, temperature, moisture)
@@ -251,19 +247,19 @@ CREATE TABLE IF NOT EXISTS Other_Names (
 --
 --
 --
--- CREATE TABLE IF NOT EXISTS Herb (
---     herbId int NOT NULL AUTO_INCREMENT,
---     latinName varchar(255) NOT NULL,
---     commonName varchar(255),
---     otherNamesId int,
---     dosageId int,
---     energeticsId int,
---     effectsId int,
---     PRIMARY KEY (herbId)
--- );
---
--- INSERT INTO Herb (latinName, commonName, OtherNamesId, dosageId, energeticsId, effectsId)
--- VALUES ('Mondarda didyma', 'Bergamot', 1, 1, 1, 2);
+CREATE TABLE IF NOT EXISTS Herb (
+    herbId int NOT NULL AUTO_INCREMENT,
+    latin_Name varchar(255) NOT NULL,
+    common_Name varchar(255),
+    otherNameId int,
+    dosageId int,
+    energeticsId int,
+    effectsId int,
+    PRIMARY KEY (herbId)
+);
+
+INSERT INTO Herb (latin_Name, common_Name)
+VALUES ('Mondarda didyma', 'Bergamot');
 -- INSERT INTO Herb (herbId, latinName, commonName, OtherNamesId, dosageId, energeticsId, effectsId)
 -- VALUES (1, 'Mondarda didyma', 'Bergamot', 2, null, null, 21);
 -- INSERT INTO Herb (herbId, latinName, commonName, OtherNamesId, dosageId, energeticsId, effectsId)
