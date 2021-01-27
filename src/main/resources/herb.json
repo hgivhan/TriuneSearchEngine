@@ -1,0 +1,144 @@
+[
+    {
+    "herbId": 1,
+    "latinName": "Artemisia argyi",
+    "commonName":"Mugwort",
+    "otherName": [
+      {
+        "otherNameId": 1,
+        "otherName": "Ai Ye"
+      }
+    ],
+    "dosage": [
+      {
+        "dosageId": 1,
+        "dosage": "1/6"
+      }
+    ],
+    "energetics": [
+      {
+        "energeticsId": 1,
+        "temperature": "slightly warm",
+        "moisture": "dry"
+      }
+    ],
+    "effects": [
+      {
+        "effectsId": 23,
+        "bodySystem": "Female Reproductive System",
+        "actions": "0"
+      },
+      {
+        "effectsId": 21,
+        "bodySystem": "Digestion/Stomach",
+        "actions": "-"
+      },
+      {
+        "effectsId": 6,
+        "bodySystem": "Blood/Xue (incl. Circulation)",
+        "actions": "-"
+      },
+      {
+        "effectsId": 66,
+        "bodySystem": "Lung/Respiratory Tract",
+        "actions": "-"
+      },
+      {
+        "effectsId": 80,
+        "bodySystem": "Nervous System/Brain",
+        "actions": "0"
+      },
+      {
+        "effectsId": 18,
+        "bodySystem": "Chinese Stomach/Spleen",
+        "actions": "-"
+      },
+      {
+        "effectsId": 57,
+        "bodySystem": "Liver/Gallbladder (Western)",
+        "actions": "-"
+      }
+    ]
+  },
+    {
+    "herbId": 2,
+    "latinName": "Morinda officinalis",
+    "commonName":"Morinda",
+    "otherName": [
+      {
+        "otherNameId": 2,
+        "otherName": "Ba Ji Tian"
+      }
+    ],
+    "dosage": [
+      {
+        "dosageId": 1,
+        "dosage": "1/6"
+      }
+    ],
+    "energetics": [
+      {
+        "energeticsId": 2,
+        "temperature": "warm",
+        "moisture": "neutral"
+      }
+    ],
+    "effects": [
+      {
+        "effectsId": 10,
+        "bodySystem": "Chinese Kidney (incl. Jing, Reproduction, Endocrine Function, Ears/Hearing",
+        "actions": "+"
+      },
+      {
+        "effectsId": 80,
+        "bodySystem": "Nervous System/Brain",
+        "actions": "0"
+      },
+      {
+        "effectsId": 50,
+        "bodySystem": "Immune System (Immunoregulators)",
+        "actions": "0"
+      },
+      {
+        "effectsId": 83,
+        "bodySystem": "Pancreas",
+        "actions": "0"
+      },
+      {
+        "effectsId": 76,
+        "bodySystem": "Musculoskeletal System",
+        "actions": "+"
+      },
+      {
+        "effectsId": 77,
+        "bodySystem": "Musculoskeletal System",
+        "actions": "0"
+      },
+      {
+        "effectsId": 70,
+        "bodySystem": "Male Reproductive System/Prostate",
+        "actions": "+"
+      },
+      {
+        "effectsId": 22,
+        "bodySystem": "Female Reproductive System",
+        "actions": "+"
+      },
+      {
+        "effectsId": 2,
+        "bodySystem": "Bladder/Genitourinary Tract (incl. Prostate, Ureters)",
+        "actions": "0"
+    },
+    {
+      "effectsId": 65,
+      "bodySystem": "Lung/Respiratory Tract",
+      "actions": "0"
+      },
+      {
+        "effectsId": 29,
+        "bodySystem": "HPA Axis/Endocrine System",
+        "actions": "0"
+      }
+    ]
+  }
+]
