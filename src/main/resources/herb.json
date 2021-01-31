@@ -60,7 +60,7 @@
       }
     ]
   },
-    {
+  {
     "herbId": 2,
     "latinName": "Morinda officinalis",
     "commonName":"Morinda",
@@ -128,16 +128,111 @@
         "effectsId": 2,
         "bodySystem": "Bladder/Genitourinary Tract (incl. Prostate, Ureters)",
         "actions": "0"
-    },
-    {
-      "effectsId": 65,
-      "bodySystem": "Lung/Respiratory Tract",
-      "actions": "0"
+      },
+      {
+        "effectsId": 65,
+        "bodySystem": "Lung/Respiratory Tract",
+        "actions": "0"
       },
       {
         "effectsId": 29,
         "bodySystem": "HPA Axis/Endocrine System",
         "actions": "0"
+      }
+    ]
+  },
+  {
+    "herbId": 3,
+    "latinName": "Elettaria cardamomum",
+    "commonName":"Cardamom",
+    "otherName": [
+      {
+        "otherNameId": 3,
+        "otherName": "Bai Dou Kou"
+      },
+      {
+        "otherNameId": 4,
+        "otherName": "Cardamon"
+      }
+    ],
+    "dosage": [
+      {
+        "dosageId": 3,
+        "dosage": "1/18"
+      }
+    ],
+    "energetics": [
+      {
+        "energeticsId": 3,
+        "temperature": "warm to hot",
+        "moisture": "dry"
+      }
+    ],
+    "effects": [
+      {
+        "effectsId": 19,
+        "bodySystem": "Digestion/Stomach",
+        "actions": "+"
+      },
+      {
+        "effectsId": 20,
+        "bodySystem": "Digestion/Stomach",
+        "actions": "0"
+      },
+      {
+        "effectsId": 21,
+        "bodySystem": "Digestion/Stomach",
+        "actions": "-"
+      },
+      {
+        "effectsId": 62,
+        "bodySystem": "Large Intestine (incl. vermifuges)",
+        "actions": "0"
+      },
+      {
+        "effectsId": 63,
+        "bodySystem": "Large Intestine (incl. vermifuges)",
+        "actions": "-"
+      },
+      {
+        "effectsId": 65,
+        "bodySystem": "Lung/Respiratory Tract",
+        "actions": "0"
+      },
+      {
+        "effectsId": 66,
+        "bodySystem": "Lung/Respiratory Tract",
+        "actions": "-"
+      },
+      {
+        "effectsId": 17,
+        "bodySystem": "Chinese Stomach/Spleen",
+        "actions": "0"
+      },
+      {
+        "effectsId": 18,
+        "bodySystem": "Chinese Stomach/Spleen",
+        "actions": "-"
+      },
+      {
+        "effectsId": 74,
+        "bodySystem": "Mucous Membranes (incl. Throat, Bronchials, Sinuses, Bladder, Large Intestine, Stomach, Vagina, Rectum",
+        "actions": "0"
+      },
+      {
+        "effectsId": 75,
+        "bodySystem": "Mucous Membranes (incl. Throat, Bronchials, Sinuses, Bladder, Large Intestine, Stomach, Vagina, Rectum",
+        "actions": "-"
+      },
+      {
+        "effectsId": 80,
+        "bodySystem": "Nervous System/Brain",
+        "actions": "0"
+      },
+      {
+        "effectsId": 81,
+        "bodySystem": "Nervous System/Brain",
+        "actions": "-"
       }
     ]
   }
