@@ -4,6 +4,8 @@ import com.example.Models.Herb;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface HerbRepository extends CrudRepository<Herb, Long> {
 
@@ -13,6 +15,8 @@ public interface HerbRepository extends CrudRepository<Herb, Long> {
     Herb findHerbByDosage(String dosage);
     Herb findHerbByEnergetics(String energetics);
     Herb findHerbByEffects(String effects);
+    Iterable<Herb> save(List<Herb> herbs);
+
 
 
 
