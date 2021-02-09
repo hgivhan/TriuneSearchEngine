@@ -37,6 +37,7 @@ public class TriuneSearchEngineApplication {
 			}
 
 		};
+//	tutorial I might start over with:	https://www.youtube.com/watch?v=rGdKmF2UzSc
 
 	}
 }
