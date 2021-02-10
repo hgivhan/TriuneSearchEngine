@@ -27,25 +27,25 @@ public class DosageService {
 
     public Iterable<Dosage> dosageIndex(){return dosageRepository.findAll();}
 
-    public Dosage getDosageById(Long dosageId){
-        return dosageRepository.findDosageByDosageId(dosageId);
-    }
+//    public Dosage getDosageById(Long dosageId){
+//        return dosageRepository.findDosageByDosageId(dosageId);
+//    }
 
     public Dosage getByDosage(String dosage){
         return dosageRepository.findDosageByDosage(dosage);
     }
 
-    public Dosage updateDosage(Long id, String dosage){
-        Dosage dosage1 = getDosageById(id);
-        dosage1.setDosage(dosage);
-
-        if (dosage1.getDosage().equals(getCheckDosageExists(dosage1.getDosage())))
-        { return null;}
-        return dosageRepository.save(dosage1); }
-
-    public void deleteDosageById(Long dosageId){
-        dosageRepository.delete(getDosageById(dosageId));
-    }
+//    public Dosage updateDosage(Long id, String dosage){
+//        Dosage dosage1 = getDosageById(id);
+//        dosage1.setDosage(dosage);
+//
+//        if (dosage1.getDosage().equals(getCheckDosageExists(dosage1.getDosage())))
+//        { return null;}
+//        return dosageRepository.save(dosage1); }
+//
+//    public void deleteDosageById(Long dosageId){
+//        dosageRepository.delete(getDosageById(dosageId));
+//    }
 
     public void deleteDosageByName(String dosage){
         dosageRepository.delete(getByDosage(dosage));

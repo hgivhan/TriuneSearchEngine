@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface DosageRepository extends CrudRepository<Dosage, Long> {
 
     Dosage findDosageByDosage(String dosage);
-    Dosage findDosageByDosageId(Long dosageId);
+//    Dosage findDosageByDosageId(Long dosageId);
 
 }

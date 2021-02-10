@@ -16,6 +16,11 @@ public class HerbController {
     @PostMapping("/addherb")
     public ResponseEntity<Herb> addHerb(@RequestBody Herb herb){return new ResponseEntity<>(herbService.postAddHerb(herb), HttpStatus.CREATED);}
 
+    @GetMapping("/listherbs")
+    public Iterable<Herb> herbIndex() {
+        return herbService.herbIndex();
+    }
+
     @GetMapping("herbbyid/{id}")
     public ResponseEntity<Herb> getHerbById(@PathVariable Long id){return new ResponseEntity<>(herbService.getHerbById(id), HttpStatus.OK);}
 
